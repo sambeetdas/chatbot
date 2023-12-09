@@ -10,6 +10,10 @@ class textmodel(BaseModel):
 
 app = FastAPI()
 
+@app.get("/status")
+def status():
+    return "running"
+
 
 @app.post("/chat")
 def chat(model: textmodel):
